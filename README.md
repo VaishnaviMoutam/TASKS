@@ -1,6 +1,7 @@
 ## HISTOGRAM
 
  1.INSTALL FOLLOWING PACKAGES
+ 
  ``` numpy, opencv, matplotlib```
   
  2.Code
