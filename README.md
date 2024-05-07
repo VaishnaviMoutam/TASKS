@@ -1,4 +1,4 @@
-##HISTOGRAM
+## HISTOGRAM
 
  1.INSTALL FOLLOWING PACKAGES
  ``` numpy, opencv, matplotlib```
