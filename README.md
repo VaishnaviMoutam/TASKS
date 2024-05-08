@@ -107,6 +107,8 @@ Finally, plt.show() displays the plotted histograms.
 
 ## INPUT
 
+![a](https://github.com/VaishnaviMoutam/TASKS/assets/169046827/02097b31-f76f-481e-9c54-f2a04041451f)
+
 
 
 
