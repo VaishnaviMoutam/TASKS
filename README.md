@@ -210,7 +210,7 @@ write objects
 
 ## Output:
 
-/home/vaishnavi-moutam/Desktop/v/vy.avi
+
   
 
 
