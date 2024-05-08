@@ -180,7 +180,7 @@ A bounding box in essence, is a rectangle that surrounds an object, that specifi
 
 ```pip install Pillow```
 
-## Example Program:
+## Explanation:
 ## Importing Libraries:
 
 1.os: Provides functions for interacting with the operating system, such as creating directories and joining file paths.
