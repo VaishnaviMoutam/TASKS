@@ -111,6 +111,8 @@ Finally, plt.show() displays the plotted histograms.
 
 ## Output:
 
+![graph](https://github.com/VaishnaviMoutam/TASKS/assets/169046827/dff78259-e36e-4a85-a0bb-4d5253edf9c2)
+
 
 
 
