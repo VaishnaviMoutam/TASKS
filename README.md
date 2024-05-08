@@ -62,7 +62,9 @@ A histogram of an image represents the distribution of pixel intensity values ac
 ## REQUIRED PACKAGES
    numpy, opencv, matplotlib
    
-```pip install numpy opencv matplotlib```
+```pip install numpy ```
+```pip install opencv-python```
+```pip install matplotlib```
  
 ## Code Explanation about Histogram of an image
 
@@ -116,11 +118,14 @@ Finally, plt.show() displays the plotted histograms.
 
 ## WEBCAM VIDEO CAPTURING
 
+## What is Webcam
 A webcam is a video camera which is designed to record or stream to a computer or computer network. They are primarily used in video telephony, live streaming and social media, and security.
 
 ## REQUIRED PACKAGES 
 ```opencv```
-```pip install opencv```
+
+```pip install opencv-python```
+
 ## Example Program
 
 import the opencv library 
@@ -154,9 +159,107 @@ Destroy all the windows
 
      cv2.destroyAllWindows()
 
-## OUTPUT:
+## Output:
 
 [Screencast from 08-05-24 12:08:07 PM IST.webm](https://github.com/VaishnaviMoutam/TASKS/assets/169046827/571978f4-9165-4985-9ef9-85f014644587)
+
+
+## CROPING & DRAWING BOUNDING BOXES
+
+## Bounding Boxes:
+
+A bounding box in essence, is a rectangle that surrounds an object, that specifies its position, class and confidence(how likely it is to be at that location). Bounding boxes are mainly used in the task of object detection, where the aim is identifying the position and type of multiple objects in the image.
+
+## Required Packages:
+```os, csv, PIL```
+
+```pip install Pillow```
+
+## Example Program:
+1.Importing Libraries:
+
+os: Provides functions for interacting with the operating system, such as creating directories and joining file paths.
+
+csv: Allows reading and writing CSV files.
+  
+PIL.Image and PIL.ImageDraw: These modules from the Python Imaging Library (PIL) provide functions for image manipulation and drawing shapes on images.
+  
+     import os
+     import csv
+     from PIL import Image,ImageDraw
+
+2.File Paths:
+
+csv_file: Path to the CSV file containing bounding box information.
+    
+image_dir: Directory containing the images.
+    
+output_dir: Directory where the processed images with bounding boxes will be saved.
+     
+     csv_file = "/home/vaishnavi-moutam/Downloads/7622202030987_bounding_box(12).csv"
+     image_dir = "/home/vaishnavi-moutam/Downloads/7622202030987(1)/7622202030987"
+     output_dir = "/home/vaishnavi-moutam/Downloads/7622202030987(1)/7622202030987_with_boxes"
+     os.makedirs(output_dir, exist_ok=True)
+
+3.Function Definitions:
+
+draw_boxes(image, boxes): Draws bounding boxes on the input image using PIL's ImageDraw module.
+    
+crop_image(image, boxes): Crops the input image based on the bounding box coordinates provided and returns a list of cropped images.
+
+     def draw_boxes(image, boxes):
+       draw = ImageDraw.Draw(image)
+       for box in boxes:
+          left = int(box['left'])
+          top = int(box['top'])
+          right = int(box['right'])
+          bottom = int(box['bottom'])
+          draw.rectangle([left, top, right, bottom], outline="blue")
+      return image
+     def crop_image(image, boxes):
+       cropped_images = []
+       for box in boxes:
+         left = int(box['left'])
+         top = int(box['top'])
+         right = int(box['right'])
+         bottom = int(box['bottom'])
+         cropped_img = image.crop((left, top, right, bottom))
+         cropped_images.append(cropped_img)
+      return cropped_images
+
+4.Main Processing:
+
+The script opens the CSV file and iterates over each row using csv.DictReader. Each row represents bounding box information for an image.
+    
+For each row, it retrieves the image file name, constructs the full path to the image, and loads the image using PIL's Image.open.
+    
+It extracts the bounding box coordinates from the CSV row and creates a list of dictionaries containing box coordinates.
+    
+It then calls crop_image to crop the image based on the bounding box coordinates. Each cropped image is saved with a filename prefixed by an index.
+    
+It calls draw_boxes to draw bounding boxes on the full image and saves the result.
+
+
+     with open(csv_file, 'r') as file:
+       csv_reader = csv.DictReader(file)
+        for row in csv_reader:
+          image_name = row['filename']
+          image_path = os.path.join(image_dir, image_name)
+          output_path = os.path.join(output_dir, image_name)
+          image = Image.open(image_path)
+          boxes = [{'left': row['xmin'], 'top': row['ymin'], 'right': row['xmax'], 'bottom': row['ymax']}]
+          cropped_images = crop_image(image, boxes)
+          for i, cropped_img in enumerate(cropped_images):
+             cropped_img.save(os.path.join(output_dir, f"{i}_{image_name}"))  
+        full_image_with_boxes = draw_boxes(image, boxes)
+        full_image_with_boxes.save(os.path.join(output_dir, f"full_{image_name}"))
+
+5.Output:
+
+Cropped images with bounding boxes are saved in the output_dir, prefixed with an index to differentiate multiple boxes in the same image.
+    
+Full images with bounding boxes drawn on them are also saved in the output_dir.
+
 
 
 
