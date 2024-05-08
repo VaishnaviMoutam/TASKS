@@ -80,6 +80,7 @@ matplotlib.pyplot: This submodule of Matplotlib provides a MATLAB-like plotting 
     cv.imwrite("/home/vaishnavi-moutam/Desktop/v/a.jpg",img)
    
 cv.imread: This function reads an image from the specified file path (/home/vaishnavi-moutam/Desktop/v/B.jpg) into a NumPy array. The image is loaded in BGR (Blue, Green, Red) format.
+
 cv.imwrite: This function writes the loaded image (img) to another file path (/home/vaishnavi-moutam/Desktop/v/a.jpg). It seems like this line is unnecessary and can be removed.
 
      assert img is not None, "file could not be read, check with os.path.exists()"
@@ -103,6 +104,10 @@ plt.plot is used to plot the histogram.
 plt.xlim([0, 256]) sets the limits of the x-axis from 0 to 255.
 
 Finally, plt.show() displays the plotted histograms.
+
+## INPUT
+
+
 
 
 
