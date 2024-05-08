@@ -1,4 +1,4 @@
-## PRINTING OF FIRST 10 NUMBERS
+## ITERATE OF FIRST 10 NUMBERS
 
 ## This is the code explanation about printing of first 10 numbers and it performs the following tasks:
 
@@ -112,6 +112,43 @@ Finally, plt.show() displays the plotted histograms.
 ## Output:
 
 ![graph](https://github.com/VaishnaviMoutam/TASKS/assets/169046827/dff78259-e36e-4a85-a0bb-4d5253edf9c2)
+
+
+## WEBCAM VIDEO CAPTURING
+
+A webcam is a video camera which is designed to record or stream to a computer or computer network. They are primarily used in video telephony, live streaming and social media, and security.
+
+## REQUIRED PACKAGES 
+```opencv```
+```pip install opencv```
+## Example Program
+
+import the opencv library 
+     import cv2 
+define a video capture object 
+     vid = cv2.VideoCapture(0) 
+  
+     while(True): 
+      
+Capture the video frame 
+by frame 
+     ret, frame = vid.read() 
+  
+Display the resulting frame 
+     cv2.imshow('frame', frame) 
+      
+the 'q' button is set as the 
+quitting button you may use any 
+desired button of your choice 
+     if cv2.waitKey(1) & 0xFF == ord('q'): 
+        break
+  
+After the loop release the cap object 
+     vid.release() 
+Destroy all the windows 
+     cv2.destroyAllWindows()
+
+## OUTPUT:
 
 
 
