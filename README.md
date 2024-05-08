@@ -1,109 +1,47 @@
-## WEBCAM
+## PRINTING OF FIRST 10 NUMBERS
 
-1. INSTALL FOLLOWING PACKAGES
+## This is the code explanation about printing of first 10 numbers and it performs the following tasks:
 
-  ```opencv```
-  
-2. Code
-  ```bash
- import cv2 
-vid = cv2.VideoCapture(0) (https://github.com/VaishnaviMoutam/TASKS/assets/169046827/8d3d5bdd-db91-4b3c-ad7f-fac1acb9865c)
+num = list(range(10))
+It creates a list named 'num' containing numbers from 0 to 9 using the 'range()' function.
 
-  
-while(True): 
-    ret, frame = vid.read() 
-    cv2.imshow('frame', frame) 
-    if cv2.waitKey(1) & 0xFF == ord('q'): 
-        break
-vid.release() 
-cv2.destroyAllWindows()
-  ```
-## NUMBER
-
-1. Code
-  ```bash
-  num = list(range(10))
 previousNum = 0
+It initializes a variable 'previousNum' with a value of 0.
+
 for i in num:
+It iterates through each element 'i' in the 'num' list.
+
     sum = previousNum + i
+    Inside the loop, it calculates the sum of the current number 'i' and the previous number 'previousNum'.
+    
     print('Current Number '+ str(i) + 'Previous Number ' + str(previousNum) + 'is ' + str(sum))
-    previousNum=i
-   ```
+    It prints the current number 'i', the previous number 'previousNum', and their sum 'sum' as a formatted string.
+    
+    previousNum=i   
+    It updates the value of 'previousNum' to the current number 'i' for the next iteration.
 
-## HISTOGRAM
+## After all this we get output:
 
-1. INSTALL FOLLOWING PACKAGES
+Current Number 0Previous Number 0is 0
+Current Number 1Previous Number 0is 1
+Current Number 2Previous Number 1is 3
+Current Number 3Previous Number 2is 5
+Current Number 4Previous Number 3is 7
+Current Number 5Previous Number 4is 9
+Current Number 6Previous Number 5is 11
+Current Number 7Previous Number 6is 13
+Current Number 8Previous Number 7is 15
+Current Number 9Previous Number 8is 17
 
-  ```numpy, opencv, matplotlib```
+##  HISTOGRAM OF AN IMAGE
 
-2. Code
-  ```bash
-  import numpy as np
-import cv2 as cv
-from matplotlib import pyplot as plt
- 
-img = cv.imread('/home/vaishnavi-moutam/Desktop/v/B.jpg')
-cv.imwrite("/home/vaishnavi-moutam/Desktop/v/a.jpg",img)
-assert img is not None, "file could not be read, check with os.path.exists()"
-color = ('b','g','r')
-for i,col in enumerate(color):
- histr = cv.calcHist([img],[i],None,[256],[0,256])
- plt.plot(histr,color = col)
- plt.xlim([0,256])
-plt.show()
-   ```
+## What is a Histogram?
 
-## BOUNDINGBOX
-
-1. INSTALL FOLLOWING PACKAGES
-
-   ```csv, PIL```
-
-2. Code
-  ```bash
-   import os
-import csv
-from PIL import Image,ImageDraw
-csv_file = "/home/vaishnavi-moutam/Downloads/7622202030987_bounding_box(12).csv"
-image_dir = "/home/vaishnavi-moutam/Downloads/7622202030987(1)/7622202030987"
-output_dir = "/home/vaishnavi-moutam/Downloads/7622202030987(1)/7622202030987_with_boxes"
-os.makedirs(output_dir, exist_ok=True)
+A histogram is a graphical representation of the distribution of numerical data. It consists of a series of adjacent rectangles, or bins, each representing a range of data values, and the height of each rectangle corresponds to the frequency of data points falling within that range.
 
 
-def draw_boxes(image, boxes):
-    draw = ImageDraw.Draw(image)
-    for box in boxes:
-        left = int(box['left'])
-        top = int(box['top'])
-        right = int(box['right'])
-        bottom = int(box['bottom'])
-        draw.rectangle([left, top, right, bottom], outline="blue")
-    return image
-def crop_image(image, boxes):
-    cropped_images = []
-    for box in boxes:
-        left = int(box['left'])
-        top = int(box['top'])
-        right = int(box['right'])
-        bottom = int(box['bottom'])
-        cropped_img = image.crop((left, top, right, bottom))
-        cropped_images.append(cropped_img)
-    return cropped_images
 
 
-with open(csv_file, 'r') as file:
-    csv_reader = csv.DictReader(file)
-    for row in csv_reader:
-        image_name = row['filename']
-        image_path = os.path.join(image_dir, image_name)
-        output_path = os.path.join(output_dir, image_name)
-        image = Image.open(image_path)
-        boxes = [{'left': row['xmin'], 'top': row['ymin'], 'right': row['xmax'], 'bottom': row['ymax']}]
-        cropped_images = crop_image(image, boxes)
-        for i, cropped_img in enumerate(cropped_images):
-            cropped_img.save(os.path.join(output_dir, f"{i}_{image_name}"))  
-        full_image_with_boxes = draw_boxes(image, boxes)
-        full_image_with_boxes.save(os.path.join(output_dir, f"full_{image_name}"))
-  ```
 
-  
+
+    
