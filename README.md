@@ -210,7 +210,8 @@ write objects
 
 ## Output:
 
-[v.webm](https://github.com/VaishnaviMoutam/TASKS/assets/169046827/987d7d51-8924-407f-a799-8ef2d8e2ef12)
+[Uploading v.webm…]()
+
 
 ## CROPING & DRAWING BOUNDING BOXES
 
