@@ -210,11 +210,7 @@ write objects
 
 ## Output:
 
-
-  
-
-
-
+https://github.com/VaishnaviMoutam/TASKS/assets/169046827/9301320f-3114-4023-b6ff-8494a7ff5c26
 
 ## CROPING & DRAWING BOUNDING BOXES
 
