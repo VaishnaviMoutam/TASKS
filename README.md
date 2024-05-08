@@ -61,7 +61,11 @@ A histogram of an image represents the distribution of pixel intensity values ac
   4.It is a versatile technique that can be used in a variety of applications.
 
 ## Required Packages:
+```requirements.txt```
+
    numpy, opencv, matplotlib
+
+```pip install -r requirements.txt```
    
 ```pip install numpy ```
 
@@ -126,7 +130,11 @@ Finally, plt.show() displays the plotted histograms.
 A webcam is a video camera which is designed to record or stream to a computer or computer network. They are primarily used in video telephony, live streaming and social media, and security.
 
 ## Required Packages:
+```requirements.txt```
+
 ```opencv```
+
+```pip install -r requirements.txt```
 
 ```pip install opencv-python```
 
@@ -176,7 +184,11 @@ Destroy all the windows
 A bounding box in essence, is a rectangle that surrounds an object, that specifies its position, class and confidence(how likely it is to be at that location). Bounding boxes are mainly used in the task of object detection, where the aim is identifying the position and type of multiple objects in the image.
 
 ## Required Packages:
+```requirements.txt```
+
 ```os, csv, PIL```
+
+```pip intsall -r requiremnts.txt```
 
 ```pip install Pillow```
 
