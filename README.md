@@ -63,7 +63,9 @@ A histogram of an image represents the distribution of pixel intensity values ac
    numpy, opencv, matplotlib
    
 ```pip install numpy ```
+
 ```pip install opencv-python```
+
 ```pip install matplotlib```
  
 ## Code Explanation about Histogram of an image
@@ -259,6 +261,9 @@ It calls draw_boxes to draw bounding boxes on the full image and saves the resul
 Cropped images with bounding boxes are saved in the output_dir, prefixed with an index to differentiate multiple boxes in the same image.
     
 Full images with bounding boxes drawn on them are also saved in the output_dir.
+
+## Input:
+
 
 
 
