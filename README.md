@@ -156,6 +156,8 @@ Destroy all the windows
 
 ## OUTPUT:
 
+[Screencast from 08-05-24 12:08:07 PM IST.webm](https://github.com/VaishnaviMoutam/TASKS/assets/169046827/571978f4-9165-4985-9ef9-85f014644587)
+
 
 
 
