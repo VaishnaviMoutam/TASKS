@@ -20,7 +20,7 @@ It prints the current number 'i', the previous number 'previousNum', and their s
     previousNum=i   
 It updates the value of 'previousNum' to the current number 'i' for the next iteration.
 
-## After all this we get output:
+## Output:
 
 Current Number 0Previous Number 0is 0
 
@@ -43,13 +43,14 @@ Current Number 8Previous Number 7is 15
 Current Number 9Previous Number 8is 17
 
 
+
 ##  HISTOGRAM OF AN IMAGE
 
-## WHAT IS HISTOGRAM OF AN IMAGE:
+## What is the Histogram of an Image:
 
 A histogram of an image represents the distribution of pixel intensity values across the image. In a grayscale image, the intensity values typically range from 0 (black) to 255 (white), and the histogram shows how many pixels have each intensity value.
 
-## ADVANTAGES OF HISTOGRAM:
+## Advantages of Histogram:
 
   1.It is a simple and effective technique that can be used to improve the contrast of images.
   
@@ -59,7 +60,7 @@ A histogram of an image represents the distribution of pixel intensity values ac
   
   4.It is a versatile technique that can be used in a variety of applications.
 
-## REQUIRED PACKAGES
+## Required Packages:
    numpy, opencv, matplotlib
    
 ```pip install numpy ```
@@ -68,7 +69,7 @@ A histogram of an image represents the distribution of pixel intensity values ac
 
 ```pip install matplotlib```
  
-## Code Explanation about Histogram of an image
+## Code Explanation about Histogram of an image:
 
     import numpy as np
     import cv2 as cv
@@ -118,12 +119,13 @@ Finally, plt.show() displays the plotted histograms.
 ![graph](https://github.com/VaishnaviMoutam/TASKS/assets/169046827/dff78259-e36e-4a85-a0bb-4d5253edf9c2)
 
 
+
 ## WEBCAM VIDEO CAPTURING
 
-## What is Webcam
+## What is Webcam:
 A webcam is a video camera which is designed to record or stream to a computer or computer network. They are primarily used in video telephony, live streaming and social media, and security.
 
-## REQUIRED PACKAGES 
+## Required Packages:
 ```opencv```
 
 ```pip install opencv-python```
@@ -164,6 +166,7 @@ Destroy all the windows
 ## Output:
 
 [Screencast from 08-05-24 12:08:07 PM IST.webm](https://github.com/VaishnaviMoutam/TASKS/assets/169046827/571978f4-9165-4985-9ef9-85f014644587)
+
 
 
 ## CROPING & DRAWING BOUNDING BOXES
@@ -263,10 +266,15 @@ Cropped images with bounding boxes are saved in the output_dir, prefixed with an
 Full images with bounding boxes drawn on them are also saved in the output_dir.
 
 ## Input:
+
 ![7622202030987_f306535d741c9148dc458acbbc887243_L_487](https://github.com/VaishnaviMoutam/TASKS/assets/169046827/6677d62e-1ffd-43d6-82de-9afc96d96c0c)
 
-## Output:
+## Output1:
+
 ![0_7622202030987_f306535d741c9148dc458acbbc887243_L_487](https://github.com/VaishnaviMoutam/TASKS/assets/169046827/4cf0b826-ff21-41a1-8286-6370a62462c8)
+
+## Output2:
+
 ![full_7622202030987_f306535d741c9148dc458acbbc887243_L_487](https://github.com/VaishnaviMoutam/TASKS/assets/169046827/a60d7323-1e9d-4636-94ea-9087bd2bd628)
 
 
