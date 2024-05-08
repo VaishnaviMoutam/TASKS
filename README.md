@@ -266,6 +266,8 @@ Full images with bounding boxes drawn on them are also saved in the output_dir.
 ![7622202030987_f306535d741c9148dc458acbbc887243_L_487](https://github.com/VaishnaviMoutam/TASKS/assets/169046827/6677d62e-1ffd-43d6-82de-9afc96d96c0c)
 
 ## Output:
+![0_7622202030987_f306535d741c9148dc458acbbc887243_L_487](https://github.com/VaishnaviMoutam/TASKS/assets/169046827/4cf0b826-ff21-41a1-8286-6370a62462c8)
+
 
 
 
