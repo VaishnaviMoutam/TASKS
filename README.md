@@ -7,7 +7,8 @@
 2. Code
   ```bash
  import cv2 
-vid = cv2.VideoCapture(0) 
+vid = cv2.VideoCapture(0) (https://github.com/VaishnaviMoutam/TASKS/assets/169046827/8d3d5bdd-db91-4b3c-ad7f-fac1acb9865c)
+
   
 while(True): 
     ret, frame = vid.read() 
