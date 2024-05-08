@@ -3,12 +3,15 @@
 ## This is the code explanation about printing of first 10 numbers and it performs the following tasks:
 
 num = list(range(10))
+
 It creates a list named 'num' containing numbers from 0 to 9 using the 'range()' function.
 
 previousNum = 0
+
 It initializes a variable 'previousNum' with a value of 0.
 
 for i in num:
+
 It iterates through each element 'i' in the 'num' list.
 
     sum = previousNum + i
