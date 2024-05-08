@@ -129,6 +129,10 @@ Finally, plt.show() displays the plotted histograms.
 ## What is Webcam:
 A webcam is a video camera which is designed to record or stream to a computer or computer network. They are primarily used in video telephony, live streaming and social media, and security.
 
+# Python program to save a 
+
+# video using OpenCV 
+
 ## Required Packages:
 ```requirements.txt```
 
@@ -139,41 +143,75 @@ A webcam is a video camera which is designed to record or stream to a computer o
 ```pip install opencv-python```
 
 ## Example Program
-
-import the opencv library 
+   
      import cv2 
-define a video capture object 
-     vid = cv2.VideoCapture(0) 
+
+ Create an object to read  
+ from camera 
+     video = cv2.VideoCapture(0) 
+   
+ We need to check if camera 
+ is opened previously or not 
+     if (video.isOpened() == False):  
+        print("Error reading video file") 
   
+ We need to set resolutions. 
+ so, convert them from float to integer. 
+     frame_width = int(video.get(3)) 
+     frame_height = int(video.get(4)) 
+   
+     size = (frame_width, frame_height) 
+   
+ Below VideoWriter object will create
+ 
+ a frame of above defined The output
+ 
+ is stored in 'filename.avi' file.
+ 
+     result = cv2.VideoWriter('vy.avi',
+                      cv2.VideoWriter_fourcc(*'MJPG'), 
+                         10, size) 
+    
      while(True): 
-      
-Capture the video frame 
-by frame 
-
-     ret, frame = vid.read() 
+         ret, frame = video.read() 
   
-Display the resulting frame
-
-     cv2.imshow('frame', frame) 
-      
-the 'q' button is set as the 
-quitting button you may use any 
-desired button of your choice 
-
-     if cv2.waitKey(1) & 0xFF == ord('q'): 
-        break
+         if ret == True:  
   
-After the loop release the cap object 
+ Write the frame into the 
+file 'filename.avi'
 
-     vid.release()
-     
-Destroy all the windows 
+        result.write(frame) 
+  
+Display the frame 
+saved in the file
 
-     cv2.destroyAllWindows()
+        cv2.imshow('Frame', frame) 
+  
+Press S on keyboard  
+to stop the process 
+
+        if cv2.waitKey(1) & 0xFF == ord('s'): 
+            break
+  
+Break the loop 
+
+        else: 
+           break
+  
+When everything done, release
+the video capture and video
+write objects 
+ 
+     video.release() 
+
+     result.release() 
+       
+     print("The video was successfully saved") 
 
 ## Output:
 
-[Screencast from 08-05-24 12:08:07 PM IST.webm](https://github.com/VaishnaviMoutam/TASKS/assets/169046827/571978f4-9165-4985-9ef9-85f014644587)
+  
+
 
 
 
