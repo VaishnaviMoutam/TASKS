@@ -269,11 +269,11 @@ A bounding box in essence, is a rectangle that surrounds an object, that specifi
 
 ![7622202030987_f306535d741c9148dc458acbbc887243_L_487](https://github.com/VaishnaviMoutam/TASKS/assets/169046827/6677d62e-1ffd-43d6-82de-9afc96d96c0c)
 
-## Output1:
+## Output1:Croped image
 
 ![0_7622202030987_f306535d741c9148dc458acbbc887243_L_487](https://github.com/VaishnaviMoutam/TASKS/assets/169046827/4cf0b826-ff21-41a1-8286-6370a62462c8)
 
-## Output2:
+## Output2:Bounding Box on a Full Image
 
 ![full_7622202030987_f306535d741c9148dc458acbbc887243_L_487](https://github.com/VaishnaviMoutam/TASKS/assets/169046827/a60d7323-1e9d-4636-94ea-9087bd2bd628)
 
