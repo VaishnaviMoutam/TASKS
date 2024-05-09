@@ -148,15 +148,18 @@ A webcam is a video camera which is designed to record or stream to a computer o
 
  Create an object to read  
  from camera 
+ 
      video = cv2.VideoCapture(0) 
    
  We need to check if camera 
  is opened previously or not 
+ 
      if (video.isOpened() == False):  
         print("Error reading video file") 
   
  We need to set resolutions. 
- so, convert them from float to integer. 
+ so, convert them from float to integer.
+ 
      frame_width = int(video.get(3)) 
      frame_height = int(video.get(4)) 
    
