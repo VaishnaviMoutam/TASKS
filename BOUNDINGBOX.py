@@ -1,9 +1,18 @@
 import os
 import csv
-from PIL import Image,ImageDraw
-csv_file = "/home/vaishnavi-moutam/Downloads/7622202030987_bounding_box(12).csv"
-image_dir = "/home/vaishnavi-moutam/Downloads/7622202030987(1)/7622202030987"
-output_dir = "/home/vaishnavi-moutam/Downloads/7622202030987(1)/7622202030987_with_boxes"
+from PIL import Image, ImageDraw
+import argparse
+
+parser = argparse.ArgumentParser()
+parser.add_argument("image_path", help = "Enter the path of the image")
+parser.add_argument("csv", help = "your csv file path, which has bounding box values")
+parser.add_argument("out_dir", help = "name of the output directory where you want to save your output")
+args = parser.parse_args()
+image_dir = args.image_path
+csv_file = args.csv
+output_dir = args.out_dir
+
+
 os.makedirs(output_dir, exist_ok=True)
 
 
@@ -14,8 +23,10 @@ def draw_boxes(image, boxes):
         top = int(box['top'])
         right = int(box['right'])
         bottom = int(box['bottom'])
-        draw.rectangle([left, top, right, bottom], outline="blue")
+        draw.rectangle([left, top, right, bottom], outline="red")
     return image
+
+
 def crop_image(image, boxes):
     cropped_images = []
     for box in boxes:
@@ -30,6 +41,8 @@ def crop_image(image, boxes):
 
 with open(csv_file, 'r') as file:
     csv_reader = csv.DictReader(file)
+    print(csv_reader)
+
     for row in csv_reader:
         image_name = row['filename']
         image_path = os.path.join(image_dir, image_name)
@@ -38,6 +51,6 @@ with open(csv_file, 'r') as file:
         boxes = [{'left': row['xmin'], 'top': row['ymin'], 'right': row['xmax'], 'bottom': row['ymax']}]
         cropped_images = crop_image(image, boxes)
         for i, cropped_img in enumerate(cropped_images):
-            cropped_img.save(os.path.join(output_dir, f"{i}_{image_name}"))  
+           cropped_img.save(os.path.join(output_dir, f"{i}_{image_name}"))  
         full_image_with_boxes = draw_boxes(image, boxes)
         full_image_with_boxes.save(os.path.join(output_dir, f"full_{image_name}"))
